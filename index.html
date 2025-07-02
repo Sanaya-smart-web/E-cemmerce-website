@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation bar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      .product {
+        border: 1px solid #ccc;
+        padding: 20px;
+        width: 300px;
+        height: auto;
+        overflow: unset;
+      }
+    </style>
+  </head>
+
+  <body class="mb-5">
+    <nav class="fixed top-0 left-0 w-full bg-blue-100/90">
+      <div
+        class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="text-4xl font-extrabold text-blue-700">
+          <span
+            class="inline-block h-8 w-8 bg-gradient-to-r from-blue-600 to-blue-200 mr-2 rounded py-auto"
+          ></span>
+          Luxora
+        </div>
+        <ul class="hidden md:flex space-x-6">
+          <li>
+            <a href="#home" class="hover:text-blue-800 font-bold">Home</a>
+          </li>
+          <li>
+            <a href="#container" class="hover:text-blue-800 font-bold"
+              >Products</a
+            >
+          </li>
+          <li>
+            <a href="#" class="hover:text-blue-800 font-bold">Services</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-blue-800 font-bold">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Menu  -->
+        <button id="menu-btn" class="md:hidden text-xl open">☰</button>
+        <button id="menu-btn-close" class="md:hidden hidden text-xl close">
+          X
+        </button>
+      </div>
+      <!-- Menu Mobile -->
+      <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+        <ul class="space-y-2">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#container">Products</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section
+      id="home"
+      class="h-[75vh] w-full bg-gradient-to-r from-sky-100 to-blue-100 flex items-center justify-center"
+    >
+      <div class="text-center px-4">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800">
+          🌟 Welcome to <span class="text-sky-600">Our E-commerce</span> Website
+        </h1>
+        <p class="mt-4 text-lg sm:text-xl text-gray-700 max-w-xl mx-auto">
+          Discover amazing products, great deals, and fast delivery — all in one
+          place.
+        </p>
+        <a
+          href="#container"
+          class="mt-6 inline-block bg-blue-600 text-white px-6 py-2 rounded-full text-lg hover:bg-blue-700 transition"
+        >
+          Start Shopping 🛒
+        </a>
+        <select
+          id="category-select"
+          class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-full text-lg hover:bg-blue-700 transition cursor-pointer"
+        >
+          <option value="all">All</option>
+          <option value="men's clothing">Men</option>
+          <option value="women's clothing">Women</option>
+          <option value="jewelery">Jewelry</option>
+          <option value="electronics">Electronics</option>
+        </select>
+      </div>
+    </section>
+
+    <div class="container mt-22" id="container">
+      <h1
+        class="mt-12 mb-6 text-3xl font-bold text-center underline font-extrabold text-blue-800"
+      >
+        Our Products
+      </h1>
+      <div
+        id="product-container"
+        class="flex flex-wrap sm:flex-column gap-4 justify-center px-4"
+      ></div>
+    </div>
+
+    <script src="fetch.js"></script>
+    <!-- Menu -->
+    <script>
+      const menuBtnOpen = document.getElementById("menu-btn");
+      const menuBtnClose = document.getElementById("menu-btn-close");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtnOpen.addEventListener("click", () => {
+        mobileMenu.classList.remove("hidden");
+        menuBtnOpen.classList.add("hidden");
+        menuBtnClose.classList.remove("hidden");
+      });
+
+      menuBtnClose.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        menuBtnClose.classList.add("hidden");
+        menuBtnOpen.classList.remove("hidden");
+      });
+    </script>
+  </body>
+</html>
