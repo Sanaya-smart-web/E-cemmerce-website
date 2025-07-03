@@ -20,7 +20,7 @@
     </style>
   </head>
 
-  <body class="mb-5">
+  <body class="scroll-smooth">
     <nav class="fixed top-0 left-0 w-full bg-blue-100/90">
       <div
         class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center"
@@ -54,6 +54,7 @@
           X
         </button>
       </div>
+
       <!-- Menu Mobile -->
       <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
         <ul class="space-y-2">
@@ -65,12 +66,14 @@
       </div>
     </nav>
 
-    <section
+    <div
       id="home"
       class="h-[75vh] w-full bg-gradient-to-r from-sky-100 to-blue-100 flex items-center justify-center"
     >
       <div class="text-center px-4">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800">
+        <h1
+          class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-blue-800"
+        >
           🌟 Welcome to <span class="text-sky-600">Our E-commerce</span> Website
         </h1>
         <p class="mt-4 text-lg sm:text-xl text-gray-700 max-w-xl mx-auto">
@@ -79,7 +82,7 @@
         </p>
         <a
           href="#container"
-          class="mt-6 inline-block bg-blue-600 text-white px-6 py-2 rounded-full text-lg hover:bg-blue-700 transition"
+          class="mt-6 inline-block bg-blue-600 text-white px-6 py-2 rounded-full sm:text-xl text-lg hover:bg-blue-700 transition"
         >
           Start Shopping 🛒
         </a>
@@ -94,9 +97,9 @@
           <option value="electronics">Electronics</option>
         </select>
       </div>
-    </section>
+    </div>
 
-    <div class="container mt-22" id="container">
+    <div class="mt-22 mb-5" id="container">
       <h1
         class="mt-12 mb-6 text-3xl font-bold text-center underline font-extrabold text-blue-800"
       >

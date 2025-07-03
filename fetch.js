@@ -46,6 +46,7 @@ function displayData(products1) {
     btn.addEventListener("click", () => {
       expanded = !expanded;
       desc.classList.toggle("max-h-16", !expanded);
+      title.classList.toggle("h-11", !expanded);
       btn.textContent = expanded ? "Show less" : "Show more";
     });
 
